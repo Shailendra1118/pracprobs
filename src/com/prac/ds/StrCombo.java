@@ -1,13 +1,13 @@
 package com.prac.ds;
 
 public class StrCombo {
-	static String input = "DBAC";
+	static String input = "CAC";
 	public static void main(String[] args) {
 		
 		String str = "ACC";
-		premuteIt("", str);
+		//premuteIt("", str);
 		//testCATech();
-		//System.out.println(isAnagram("", str));
+		System.out.println(isAnagram("", str));
 		 
 	}
 
@@ -26,11 +26,7 @@ public class StrCombo {
 				System.out.println(soFar);
 		}else{
 			for (int i = 0; i < rest.length(); i++) {
-				String next = "";
-				//if(soFar.indexOf(rest.charAt(i)) > 0)
-					//next = soFar;
-				//else
-					next = soFar + rest.charAt(i);
+				String next = soFar + rest.charAt(i);
 				String remaining = rest.substring(0, i) + rest.substring(i+1);
 				//System.out.println("calling again with "+next+" "+remaining);
 				premuteIt(next, remaining);
@@ -40,9 +36,9 @@ public class StrCombo {
 	
 	private static boolean isAnagram(String soFar, String rest) {
 		//base case - exit condition
-		if(rest.equals("")){
-				System.out.println(soFar);
-				if(soFar.equals(input))
+		if(soFar.equals(input)){
+		//if(rest.equals("")){ //soFar.equals(input)){ //rest.equals("")){
+				System.out.println(soFar+" "+input);				
 					return true;
 				
 		}else{
@@ -51,7 +47,7 @@ public class StrCombo {
 				String remaining = rest.substring(0, i) + rest.substring(i+1);
 				//System.out.println("calling again with "+next+" "+remaining);
 				if(isAnagram(next, remaining))
-					break;
+					return true;
 			} 
 		}
 		
