@@ -11,6 +11,23 @@ public class FundeCore {
 		
 		o2.display();
 		o3.display();
+		
+		Integer a = new Integer(10);
+		Integer b = new Integer(10);
+		if(a == b)
+			System.out.println("a > b");  // < > will trigger un-boxing
+		else
+			System.out.println("not equal");
+		
+		Integer c = 10;
+		Integer d = 10;
+		if(c == d)
+			System.out.println("c==d");
+		
+		String str = new String("a");
+		String stra = new String("b");
+		if(str != stra)
+			System.out.println("string equal");
 	}
 	
 	public void doStuff(Animal obj){
@@ -33,4 +50,28 @@ class Horse extends Animal {
 	public void display(){
 		System.out.println("in Horse display");
 	}
+}
+
+abstract class Parent{
+	abstract public void doSome();
+	abstract void doNothing();
+	void showProgress(){
+		System.out.println("progress");
+	}
+}
+
+class Child extends Parent{
+
+	@Override
+	public void doSome() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void doNothing() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
