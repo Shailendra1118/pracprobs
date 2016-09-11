@@ -10,7 +10,7 @@ public class SpeakAndSay {
 	static Map<String, String> map = new LinkedHashMap<>();
 	public static void main(String[] args) {
 		//System.out.println(speak("21"));
-		System.out.println(speakAgain("11", 3));
+		System.out.println(speakAgain("11", 2));
 	}
 
 	private static String speakAgain(String str, int n) {
