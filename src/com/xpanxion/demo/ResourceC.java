@@ -5,8 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ResourceC {
 	
-	public ResourceC(){
-		
+	public ResourceC(){		
 		System.out.println("ResourceC constructor");
 	}
 	

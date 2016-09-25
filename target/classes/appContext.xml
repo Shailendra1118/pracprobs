@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	    http://www.springframework.org/schema/beans
+	   	http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/cache
+		http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/jee
+		http://www.springframework.org/schema/jee/spring-jee.xsd">
+		
+		<import resource="datasource.xml" />
+		<bean id="customerDao" class="com.shailendra.app.dao.CustomerDaoImpl">
+			<property name="datasource" ref="datasource"></property>
+		</bean>
+		
+		<bean id="myEntity" class="com.sabre.annotation.MyEntity" />
+		<bean id="timerProcessor" class="com.sabre.annotation.TimerProcessor"/>
+		<bean id="myEntityProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+			<property name="target" ref="myEntity"/>
+			<property name="interceptorNames">
+				<list>
+					<value>timerProcessor</value>
+				</list>
+			</property>
+		</bean>
+		
+		<context:component-scan base-package="com.xpanxion.demo">
+		</context:component-scan>
+	
+<!-- 	<bean id="processor" class="com.xpanxion.demo.RequestProcessor"> -->
+<!-- 		<lookup-method name="getResourceA" bean="resourceA"/> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="resourceA" class="com.xpanxion.demo.ResourceA" scope="prototype"/> -->
+<!-- 	<bean id="resourceB" class="com.xpanxion.demo.ResourceB" scope="prototype"/> -->
+
+	
+	
+	
+
+</beans>

@@ -3,6 +3,7 @@ package com.xpanxion.demo;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class Tesing {
@@ -12,8 +13,8 @@ public class Tesing {
 	
 	
 	
-	public static void main(String args[]){
-		ApplicationContext context = new FileSystemXmlApplicationContext("D:\\Keppler\\CrazyCode\\appContext.xml");
+	public static void main(String args[]){		
+		AbstractApplicationContext context = new FileSystemXmlApplicationContext("D:\\Keppler\\CrazyCode\\appContext.xml");
 	/*	RequestProcessor processor = (RequestProcessor)context.getBean("RequestProcessor"); //processor
 		for (int i=0;i<3;i++){
 			ResourceA resource = processor.getResourceA();
@@ -35,5 +36,7 @@ public class Tesing {
 		//ResourceA b = processor.getResourceB();
 		//System.out.println(processor.getResourceA().getName());
 		//System.out.println(a.rC.getSomeFun());
+		context.close();
+		//context.registerShutdownHook();
 	}
 }

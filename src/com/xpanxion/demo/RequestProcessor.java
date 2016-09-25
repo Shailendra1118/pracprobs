@@ -1,7 +1,5 @@
 package com.xpanxion.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 //@Component
 public abstract class RequestProcessor {
