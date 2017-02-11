@@ -24,11 +24,11 @@
 	        <artifactId>spring-jdbc</artifactId>
 	        <version>${spring.version}</version>
     	</dependency>
-    	<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId>
-			<version>2.2.2</version>
-		</dependency>
+<!--     	<dependency> -->
+<!-- 			<groupId>cglib</groupId> -->
+<!-- 			<artifactId>cglib</artifactId> -->
+<!-- 			<version>2.2.2</version> -->
+<!-- 		</dependency> -->
 		
     <dependency>
       <groupId>junit</groupId>
@@ -51,16 +51,18 @@
   </dependencies>
   
   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-    </plugins>
+   <pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>${java-version}</source>
+						<target>${java-version}</target>
+					</configuration>
+				</plugin>			
+			</plugins>
+		</pluginManagement>
   </build>
 </project>

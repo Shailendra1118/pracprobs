@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.shailendra.app.dao.CustomerDAO;
 import com.shailendra.app.model.Customer;
+import com.shailendra.app.model.CycleBoot;
 
 public class SpringApp {
 	public static void main(String args[]){
@@ -19,5 +20,11 @@ public class SpringApp {
 	
 	        Customer cust = customerDAO.findByCustomerId(1);
 	        System.out.println(cust.getCustId()+":"+cust.getName()+":"+cust.getAge());
+	        
+	        //Cyclic test
+	        //AService aService = (AService) context.getBean("aService");
+	        //aService.display();
+	        //CycleBoot boot = context.getBean(CycleBoot.class);
+	        new CycleBoot(context).start();
 	}
 }

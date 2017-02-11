@@ -34,8 +34,17 @@
 			</property>
 		</bean>
 		
-		<context:component-scan base-package="com.xpanxion.demo">
+		<context:component-scan base-package="com.xpanxion.demo,com.shailendra.app.model">
 		</context:component-scan>
+		
+		
+		
+<!-- 		<bean id="aService" class="com.shailendra.app.model.AService"> -->
+<!-- 			<property name="bService" ref="bService"/> -->
+<!-- 		</bean> -->
+<!-- 		<bean id="bService" class="com.shailendra.app.model.BService"> -->
+<!-- 			<property name="aService" ref="aService"/> -->
+<!-- 		</bean> -->
 	
 <!-- 	<bean id="processor" class="com.xpanxion.demo.RequestProcessor"> -->
 <!-- 		<lookup-method name="getResourceA" bean="resourceA"/> -->

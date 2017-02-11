@@ -1,6 +1,5 @@
 package com.xpanxion.demo;
 
-import org.springframework.stereotype.Component;
 
 //@Component
 public class ResourceB {

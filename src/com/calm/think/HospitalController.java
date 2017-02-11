@@ -2,7 +2,6 @@ package com.calm.think;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Random;
 
 public class HospitalController {
 

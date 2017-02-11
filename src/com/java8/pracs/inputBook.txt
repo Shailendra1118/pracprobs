@@ -1,0 +1,3 @@
+The stream method yields a stream for the words list. The filter method returns another
+stream that contains only the words of length greater than twelve. The count
+method reduces that stream to a result.

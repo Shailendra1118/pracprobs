@@ -1,6 +1,5 @@
 package com.prac.ds;
 
-import java.util.Arrays;
 
 
 public class NumberBits {
