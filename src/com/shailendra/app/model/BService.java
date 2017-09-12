@@ -3,7 +3,7 @@ package com.shailendra.app.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class BService {
 	
 	//@Autowired
@@ -13,7 +13,7 @@ public class BService {
 //		System.out.println("default BService constr");
 //	}
 	
-	@Autowired
+	//@Autowired
 	public BService(AService aService){
 		System.out.println("BService contsturtor");
 		this.aService = aService;

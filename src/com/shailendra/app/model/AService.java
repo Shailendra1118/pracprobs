@@ -1,9 +1,8 @@
 package com.shailendra.app.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class AService {
 	
 	//@Autowired
@@ -13,11 +12,11 @@ public class AService {
 //		System.out.println("Default AService contr");
 //	}
 	
-	@Autowired
-	public AService(BService bService){
-		System.out.println("AService contsturtor");
-		this.bService = bService;
-	}
+//	@Autowired
+//	public AService(BService bService){
+//		System.out.println("AService contsturtor");
+//		this.bService = bService;
+//	}
 	
 	// void setBService(BService service){
 	//	this.bService = service;
